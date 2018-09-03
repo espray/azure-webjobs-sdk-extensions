@@ -9,7 +9,6 @@ namespace WebJobs.Extensions.DependencyInjection
         : Attribute
     {
         public InjectAttribute()
-        {
-        }
+        { }
     }
 }
