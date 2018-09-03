@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebJobs.Extensions.DependencyInjection", "src\WebJobs.Extensions.DependencyInjection\WebJobs.Extensions.DependencyInjection.csproj", "{B97CA51D-2631-427E-9E5F-672308941D1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{555644A0-2800-4C68-A692-0E580025E112}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{935F08F3-16D6-458D-B801-322BA6BA9CA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobs.Extensions.DependencyInjection.Tests", "WebJobs.Extensions.DependencyInjection.Tests\WebJobs.Extensions.DependencyInjection.Tests.csproj", "{CE379B78-FCE3-4068-AA53-50E249692411}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +21,17 @@ Global
 		{B97CA51D-2631-427E-9E5F-672308941D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B97CA51D-2631-427E-9E5F-672308941D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B97CA51D-2631-427E-9E5F-672308941D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE379B78-FCE3-4068-AA53-50E249692411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE379B78-FCE3-4068-AA53-50E249692411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE379B78-FCE3-4068-AA53-50E249692411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE379B78-FCE3-4068-AA53-50E249692411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B97CA51D-2631-427E-9E5F-672308941D1C} = {935F08F3-16D6-458D-B801-322BA6BA9CA9}
+		{CE379B78-FCE3-4068-AA53-50E249692411} = {555644A0-2800-4C68-A692-0E580025E112}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FBEB734-69EA-40F8-B6B5-E50934861320}
