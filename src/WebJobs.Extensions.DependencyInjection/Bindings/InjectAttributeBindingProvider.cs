@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.Azure.WebJobs.Host.Bindings;
+using Microsoft.Azure.WebJobs.Host.Config;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Concurrent;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using Microsoft.Azure.WebJobs.Host.Bindings;
-using Microsoft.Azure.WebJobs.Host.Config;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using WebJobs.Extensions.DependencyInjection.Config;
 
 namespace WebJobs.Extensions.DependencyInjection.Bindings
@@ -52,7 +52,10 @@ namespace WebJobs.Extensions.DependencyInjection.Bindings
 
                     var serviceRegistrationTypeList = assembly
                         .GetExportedTypes()
-                        .Where(t => typeof(IServiceRegistration).IsAssignableFrom(t));
+                        .Where(
+                            t => typeof(IServiceRegistration).IsAssignableFrom(t) &&
+                            !t.IsInterface &&
+                            !t.IsAbstract);
 
                     serviceRegistrationType = serviceRegistrationTypeList.FirstOrDefault();
 
@@ -81,7 +84,7 @@ namespace WebJobs.Extensions.DependencyInjection.Bindings
                 {
                     _logger.LogWarning($"Did not find a service registration.");
                 }
-                
+
                 services.AddSingleton<IServiceProviderAccessor>(sp => new ServiceProviderAccessor(sp));
 
                 _serviceProvider = services.BuildServiceProvider();
